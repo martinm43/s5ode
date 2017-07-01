@@ -5,9 +5,9 @@
 
 #define N 2                     
 /* number of first order equations */
-#define dist 0.001                
+#define dist 0.05                
 /* stepsize in t*/
-#define MAX 30.0                
+#define MAX 20.0                
 /* max for t */
 #define PI 3.1415926535897  
 FILE *output;                   
@@ -22,7 +22,8 @@ void runge4(double x, double y[], double step); /* Runge-Kutta function */
 
 double f(double x, double y[], int i);          /* function for derivatives */
 
-output=fopen("osc.dat", "w");                   /* external filename */
+output=fopen("c_program_output.dat", "w");                   /* external 
+filename */
 
 y[0]=PI/2;                                       
 /* initial position */
