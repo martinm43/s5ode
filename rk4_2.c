@@ -13,14 +13,18 @@
 FILE *output;                   
 /* internal filename */
 
-main()
+double f(double x, double y[], int i); /* function for derivatives */
+//This edit made because most compilers need to see function before use
+//Linux (android gcc) compiler assumed it and throws warnings but windows does not
+//See https://stackoverflow.com/questions/15850042/xcode-warning-implicit-declaration-of-function-is-invalid-in-c99
+///for further information
+
+int main()
 {
 double t, y[N];
 int j;
  
 void runge4(double x, double y[], double step); /* Runge-Kutta function */
-
-double f(double x, double y[], int i);          /* function for derivatives */
 
 output=fopen("c_program_output.dat", "w");                   /* external 
 filename */
@@ -66,4 +70,4 @@ if (i==0) return(y[1]);                 /* derivative of first equation */
 if (i==1) return(-D/I*y[1]*y[1]-M/I*sin(y[0]));       
 /* 
 derivative of second equation */
-}
+else return 0;}
