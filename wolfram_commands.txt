@@ -1,0 +1,10 @@
+### Mathematica inputs and outputs ###
+### Due to licensing issue (have to add sufficiently long password to Pi/don't want to use that account) this is what we will save for now ###
+In[1]:= s = NDSolve[{y''[x] - Sin[y[x]]+(y'[x])^2==0, y'[0]==0, y[0] == 1.5}, y,{x, 0, 2}]
+Out[1]= {{y -> InterpolatingFunction[{{0., 2.}}, <>]}}
+In[2]:= p=Plot[Evaluate[y[x] /. s], {x, 0, 30}, PlotRange -> All]
+Out[2]= -Graphics-
+In[3]:= Export["graphics.png", p]
+Fontconfig warning: "/etc/fonts/conf.d/40-nonlatin.conf", line 140: unknown element "famidy"
+Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 142: mismatched tag
+Out[3]= graphics.png
