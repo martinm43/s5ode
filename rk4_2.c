@@ -5,7 +5,7 @@
 
 #define N 2                     
 /* number of first order equations */
-#define dist 0.05                
+#define dist 0.000005                
 /* stepsize in t*/
 #define MAX 20.0                
 /* max for t */
