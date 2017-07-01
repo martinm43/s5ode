@@ -5,7 +5,7 @@
 
 #define N 2                     
 /* number of first order equations */
-#define dist 0.000005                
+#define dist 0.005                
 /* stepsize in t*/
 #define MAX 20.0                
 /* max for t */
@@ -67,7 +67,7 @@ M=1.0; ///magnetism torque term
 D=1.0;  ///Water drag term
 I=1.0;  ///Moment of inertia term
 if (i==0) return(y[1]);                 /* derivative of first equation */
-if (i==1) return(-D/I*y[1]*y[1]-M/I*sin(y[0]));       
+if (i==1) return(-D/I*y[1]*y[1]+M/I*sin(y[0]));       
 /* 
 derivative of second equation */
 else return 0;}

@@ -18,9 +18,9 @@ def f(y, t, params):
     return derivs
 
 # Parameters
-I = 2.0      # Moment of inertia
-D = 1.5      # Viscous/fluid damping factor
-M = 0.65     # Magnetic force factor.
+I = 1.0      # Moment of inertia
+D = 1.0      # Viscous/fluid damping factor
+M = 1.0     # Magnetic force factor.
 
 # Initial values
 theta0 = pi/2     # initial angular displacement
@@ -33,8 +33,8 @@ params = [I, D, M]
 y0 = [theta0, omega0]
 
 # Make time array for solution
-tStop = 200.
-tInc = 0.05
+tStop = 20.
+tInc = 0.005
 t = np.arange(0., tStop, tInc)
 
 # Call the ODE solver
