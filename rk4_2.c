@@ -1,5 +1,7 @@
 /* Runge Kutta for a set of first order differential equations */
 
+//MAM July 1 2017
+
 #include <stdio.h>
 #include <math.h>
 
