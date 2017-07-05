@@ -64,10 +64,19 @@ for (i=0;i<N;i++) y[i]+=(k1[i]+2*k2[i]+2*k3[i]+k4[i])/6.0;
 
 double  f(double x, double y[], int i)
 {
+double r,rho,A,cd; //water drag sub terms
+/* kg*m^-3*m^2*m^3*/
+r=1.0;
+rho=1.225;
+A=1.0;
+cd=1.0;
+double mu,B; //magnetism terms
+mu=1.0;
+B=56e-6;
 double M,D,I;
-M=1.0; ///magnetism torque term
-D=1.0;  ///Water drag term
-I=1.0;  ///Moment of inertia term
+M=mu*B; ///magnetism torque term
+D=pow(r,3.0)*rho*A*cd;  ///Water drag term
+I=1.0;  ///Moment of inertia t erm
 if (i==0) return(y[1]);                 /* derivative of first equation */
 if (i==1) return(-D/I*y[1]*y[1]+M/I*sin(y[0]));       
 /* 
