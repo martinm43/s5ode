@@ -9,7 +9,7 @@
 /* number of first order equations */
 #define dist 0.005                
 /* stepsize in t*/
-#define MAX 20.0                
+#define MAX 10.0                
 /* max for t */
 #define PI 3.1415926535897  
 FILE *output;                   
