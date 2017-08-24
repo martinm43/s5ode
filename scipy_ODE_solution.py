@@ -2,7 +2,9 @@
 """
 Created on Fri Jun 30 20:49:39 2017
 
-@author: Original as pNYU Physics as shown at http://www.physics.nyu.edu/pine/pymanual/html/chap9/chap9_scipy.html
+@author/model for code: Original as pNYU 
+Physics as 
+shown at http://www.physics.nyu.edu/pine/pymanual/html/chap9/chap9_scipy.html
 """
 
 import numpy as np
@@ -18,10 +20,21 @@ def f(y, t, params):
     return derivs
 
 # Parameters
-l=1.0   #"length" (height) of person in water
-I = 1.0      # Moment of inertia
-D = 1.0      # Viscous/fluid damping factor
-M = 1.0     # Magnetic force factor.
+l=1.0   # "length" (height) of person in water, m
+r=l/2   # half the height of the person
+A=1.0     # drag area of person
+Cd = 1.0 # drag coefficient of person
+m=1.0   # mass (kg)
+rho = 1.225 #density of water, kg/m^3
+mm = 1.0 # magnetic coefficient m
+B = 1.0 # magnetic aafield strength
+
+
+# Equation coefficients
+I = 1/12*m*l**2      # Moment of inertia
+D = rho*A      # Viscous/fluid damping 
+factor
+M = mm*B     # Magnetic force factor.
 
 # Initial values
 theta0 = pi/2     # initial angular displacement
