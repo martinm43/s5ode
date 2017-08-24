@@ -18,6 +18,7 @@ def f(y, t, params):
     return derivs
 
 # Parameters
+l=1.0   #"length" (height) of person in water
 I = 1.0      # Moment of inertia
 D = 1.0      # Viscous/fluid damping factor
 M = 1.0     # Magnetic force factor.
@@ -39,6 +40,12 @@ t = np.arange(0., tStop, tInc)
 
 # Call the ODE solver
 psoln = odeint(f, y0, t, args=(params,))
+
+#Translate angle into distances (x and y parameters)
+x1=l*np.cos(psoln[:,0])
+x2=-x1
+y1=l*np.sin(psoln[:,0])
+y2=-y1
 
 # Plot results
 fig = plt.figure(1, figsize=(8,8))
