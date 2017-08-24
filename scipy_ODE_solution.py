@@ -22,7 +22,7 @@ def f(y, t, params):
 # Parameters
 h = 64 #height in inches
 w = 150 #weight in lb
-l=h*2.54   # "length" of person in water, m, from height h
+l=h*2.54/100   # "length" of person in water, m, from height h
 r=l/2   # half the height of the person
 t=0.2   # cross sectional thickness of person, m
 A=l*t     # drag area of person
@@ -34,7 +34,7 @@ B = 1.0 # magnetic field strength
 
 
 # Equation coefficients
-I = 1/12*m*l**2      # Moment of inertia
+I = (1.0/12.0)*m*(l**2)      # Moment of inertia
 D = (r**3)*rho*A*Cd      # Viscous/fluid damping factor
 M = mm*B     # Magnetic force factor.
 
