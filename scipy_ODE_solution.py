@@ -20,15 +20,17 @@ def f(y, t, params):
     return derivs
 
 # Parameters
-l=1.0   # "length" (height) of person in water, m
+h = 64 #height in inches
+w = 150 #weight in lb
+l=h*2.54   # "length" of person in water, m, from height h
 r=l/2   # half the height of the person
-t=0.2.   # cross sectional thickness of person, m
+t=0.2   # cross sectional thickness of person, m
 A=l*t     # drag area of person
 Cd = 1.0 # drag coefficient of person
-m=50.0   # mass (kg)
+m=w/2.2   # mass (kg)
 rho = 1.225 #density of water, kg/m^3
 mm = 1.0 # magnetic coefficient m
-B = 1.0 # magnetic aafield strength
+B = 1.0 # magnetic field strength
 
 
 # Equation coefficients
