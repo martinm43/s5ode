@@ -1,4 +1,0 @@
-clang version 4.0.0 (tags/RELEASE_400/final)
-Target: armv7a--linux-android
-Thread model: posix
-InstalledDir: /data/data/com.termux/files/usr/bin
