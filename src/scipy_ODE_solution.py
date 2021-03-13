@@ -28,8 +28,7 @@ h = 64 #height in inches
 w = 150 #weight in lb
 l=h*2.54/100   # "length" of person in water, m, from height h
 r=l/2   # half the height of the person
-t=0.2   # cross sectional thickness of person, m
-A=l*t     # drag area of person
+t=0.3   # cross sectional thickness of person, m
 Cd = 1.0 # drag coefficient of person
 m=w/2.2   # mass (kg)
 rho = 1.225 #density of water, kg/m^3
@@ -39,7 +38,7 @@ B = 1.0 # magnetic field strength
 
 # Equation coefficients
 I = (1.0/12.0)*m*(l**2)      # Moment of inertia
-D = (r**3)*rho*A*Cd      # Viscous/fluid damping factor
+D = (r**4)*rho*t*Cd/8      # Viscous/fluid damping factor
 M = mm*B     # Magnetic force factor.
 
 # Initial values
