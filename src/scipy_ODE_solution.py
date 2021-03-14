@@ -90,30 +90,30 @@ ax3.set_xlim(0., twopi)
 
 plt.tight_layout()
 plt.show()
-
-#Animation components bothered from "Double_Pendulum.py"
-fig = plt.figure()
-ax = fig.add_subplot(111, autoscale_on=False, xlim=(-l, l), ylim=(-l, l))
-ax.grid()
-
-line, = ax.plot([], [], 'o-', lw=2)
-time_template = 'time = %.1fs'
-time_text = ax.text(0.05, 0.9, '', transform=ax.transAxes)
-
-def init():
-    line.set_data([], [])
-    time_text.set_text('')
-    return line, time_text
-
-def animate(i):
-    thisx = [0, x1[i], x2[i]]
-    thisy = [0, y1[i], y2[i]]
-
-    line.set_data(thisx, thisy)
-    time_text.set_text(time_template%(i*tInc))
-    return line, time_text
-
-ani = animation.FuncAnimation(fig, animate, np.arange(1, len(psoln)),
-    interval=25, blit=True, init_func=init)
-
-HTML(ani.to_html5_video())
+plt.save("angles.png")
+##Animation components bothered from "Double_Pendulum.py"
+#fig = plt.figure()
+#ax = fig.add_subplot(111, autoscale_on=False, xlim=(-l, l), ylim=(-l, l))
+#ax.grid()
+#
+#line, = ax.plot([], [], 'o-', lw=2)
+#time_template = 'time = %.1fs'
+#time_text = ax.text(0.05, 0.9, '', transform=ax.transAxes)
+#
+#def init():
+#    line.set_data([], [])
+#    time_text.set_text('')
+#    return line, time_text
+#
+#def animate(i):
+#    thisx = [0, x1[i], x2[i]]
+#    thisy = [0, y1[i], y2[i]]
+#
+#    line.set_data(thisx, thisy)
+#    time_text.set_text(time_template%(i*tInc))
+#    return line, time_text
+#
+#ani = animation.FuncAnimation(fig, animate, np.arange(1, len(psoln)),
+#    interval=25, blit=True, init_func=init)
+#
+#HTML(ani.to_html5_video())
